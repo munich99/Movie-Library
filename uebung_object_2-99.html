@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 
+<style>
+    .erste_klasse { color: blueviolet;}
+</style>
+
 <script>
     'use srtict';
 
@@ -66,6 +70,36 @@
         console.log(xx.aktuelleAlter, "alt"); 
         gesamtLaenge +=  xx.laufzeit        
     }
+
+
+    // HTML
+
+    document.addEventListener( 'DOMContentLoaded', () =>{
+        let ausgabe = document.querySelector('#start');
+
+        const DOMobjekterzeugen = ({
+            typ = "span",
+            inhalt = false,
+            klassen = [],
+            eltern = ausgabe
+        }= {}) =>   {
+                        let neu = document.createElement( typ );
+                        if(inhalt) neu.innerHTML = inhalt;
+                        if(klassen.length) neu.className = klassen;
+                        ausgabe.appendChild ( neu )
+                    }
+
+                DOMobjekterzeugen ({
+                    inhalt: film[0].filmtitel,
+                    klassen: ['erste_klasse']
+                })
+
+                DOMElementErzeugen();
+
+    }
+
+
+    )
     
 
 
@@ -73,6 +107,8 @@
 
 </script>
 <body>
+
+    <div id="start"></div>
     
 </body>
 </html>
