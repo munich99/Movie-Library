@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+    'use srtict';
+
+    let film = [], alter, gesamtLaenge=0;
+
+    class Filme {
+        constructor(...args){
+            this.filmtitel = args[0];
+            this.regisseur =args [1];
+            this.laufzeit = args[2] // in Minuten;
+            this.erscheinungsjahr = args[3];                                
+        }
+
+        get aktuelleAlter() { return new Date().getFullYear() - this.erscheinungsjahr }
+
+    }
+
+    
+
+    let film1 = new Filme ("hallo", "2", 60, 2011);
+    let film2 = new Filme ("gestern", "mister y", 70, 2012);
+
+    film.push(film1);
+    film.push(film2);
+    // film.push(film1.aktuelleAlter);
+    // film.push(film2);
+
+    for(xx of film) { 
+        gesamtLaenge = gesamtLaenge + xx.laufzeit        
+    }
+
+    console.log(gesamtLaenge,"Gesamtlaenge");
+
+    
+
+    console.log(film);  
+    console.log(film1.aktuelleAlter);
+
+
+</script>
+<body>
+    
+</body>
+</html>
