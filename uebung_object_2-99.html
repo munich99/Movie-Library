@@ -34,16 +34,41 @@
     // film.push(film1.aktuelleAlter);
     // film.push(film2);
 
-    for(xx of film) { 
-        gesamtLaenge = gesamtLaenge + xx.laufzeit        
+    for(xx of film) {         
+        console.log(xx); 
+        console.log(xx.aktuelleAlter, "alt"); 
+        gesamtLaenge +=  xx.laufzeit        
     }
-
     console.log(gesamtLaenge,"Gesamtlaenge");
-
+    
     
 
-    console.log(film);  
-    console.log(film1.aktuelleAlter);
+    // Neue Klasse auf Basis der bestehenden Klasse
+    class Orte extends Filme {
+        constructor(filmtitel, regisseur, laufzeit, erscheinungsjahr, drehort, reiseveranstalter ) {
+            super(filmtitel, regisseur, laufzeit, erscheinungsjahr)
+            this.drehort = drehort
+            this.reiseveranstalter = reiseveranstalter
+
+            console.log( this ,"zweite klasse");            
+        }
+    }
+
+    let orteNeu=[];
+
+    const orteNeu1 = new  Orte("hallo", "2", 60, 2017, "München", "tubataba");
+
+    orteNeu.push(orteNeu1);
+    //orteNeu.push(orteNeu2);
+
+    for(xx of orteNeu) {         
+        console.log(xx); 
+        console.log(xx.aktuelleAlter, "alt"); 
+        gesamtLaenge +=  xx.laufzeit        
+    }
+    
+
+
 
 
 </script>
